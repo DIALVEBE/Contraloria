@@ -25,6 +25,6 @@
 
 [Consultar los materiales](https://dialvebe.github.io/Contraloria/sesion-1/#materiales) · [Descargar el paquete completo](https://dialvebe.github.io/Contraloria/descargas/sesion-1.zip)
 
-Universidad Santo Tomas
+Universidad Santo Tomás
 
 Andrea Cruz Yomayusa - Diego Alejandro Vela
