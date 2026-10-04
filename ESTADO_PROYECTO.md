@@ -41,7 +41,7 @@ Crear un aula pública en GitHub Pages para el curso **Analítica de Datos e Int
 - Rutas internas y enlaces de descarga comprobados en el sitio local.
 - Navegación por apartados, copia, descarga y persistencia de casillas comprobadas.
 - Capturas revisadas en escritorio y móvil; sin errores de JavaScript en las pruebas.
-- Verificación pendiente sobre la URL pública después de publicar el ajuste de cuatro fases.
+- Verificación repetida sobre la URL pública: páginas de las cuatro fases, enlaces internos, descargas, diagramas y responsive correctos.
 - ZIP validado con la guía completa y las cuatro fases en Markdown.
 - Publicación completada en [GitHub Actions](https://github.com/DIALVEBE/Contraloria/actions/runs/37157069641). El primer intento recibió un error 503 de GitHub; el reintento finalizó correctamente.
 
@@ -57,4 +57,4 @@ La creación, publicación y verificación del índice están completas. La sesi
 - Sitio: https://dialvebe.github.io/Contraloria/
 - Sesión 1: https://dialvebe.github.io/Contraloria/sesion-1/
 - Materiales: https://dialvebe.github.io/Contraloria/descargas/sesion-1.zip
-- Estado: ajuste de cuatro fases listo para publicación.
+- Estado: ajuste de cuatro fases publicado y verificado.
