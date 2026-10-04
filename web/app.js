@@ -1,6 +1,6 @@
-import { createIcons, ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, Download, FolderDown, ChevronRight, ChevronDown, Database, Printer, List, Copy, Check } from 'lucide';
+import { createIcons, ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, Download, FolderDown, ChevronRight, ChevronDown, Database, Printer, List, Copy, Check, ListChecks } from 'lucide';
 
-const icons = { ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, Download, FolderDown, ChevronRight, ChevronDown, Database, Printer, List, Copy, Check };
+const icons = { ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, Download, FolderDown, ChevronRight, ChevronDown, Database, Printer, List, Copy, Check, ListChecks };
 const refreshIcons = () => createIcons({ icons });
 refreshIcons();
 document.querySelector('.print-button')?.addEventListener('click', () => window.print());

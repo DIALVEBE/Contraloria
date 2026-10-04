@@ -14,14 +14,10 @@
 
 ## Materiales de la sesión 1
 
-- Guía de la sesión.
-- Mapa de fuentes de datos.
-- Práctica de calidad y conjunto de datos ficticios en CSV.
-- Diccionario de datos.
-- Ficha de evaluación de fuentes.
-- Ficha de construcción de indicadores.
-- Reto Boyacá 360°.
-- Directorio de portales y documentación.
+- Fase 1: Datos e información para la toma de decisiones.
+- Fase 2: Tipos y fuentes de datos en el sector público, con énfasis en SECOP II.
+- Fase 3: Calidad, estructuración y gobernanza de datos.
+- Fase 4: Indicadores y métricas para la gestión pública.
 
 [Consultar los materiales](https://dialvebe.github.io/Contraloria/sesion-1/#materiales) · [Descargar el paquete completo](https://dialvebe.github.io/Contraloria/descargas/sesion-1.zip)
 
