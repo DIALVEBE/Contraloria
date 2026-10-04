@@ -11,7 +11,7 @@ Crear un aula pública en GitHub Pages para el curso **Analítica de Datos e Int
 - Conservar las sesiones 2 a 5 como pendientes hasta disponer de sus materiales.
 - Seguir la identidad visual de `estilos.json`, con contenido de ancho amplio y adaptación a móviles.
 - Mostrar diagramas, tablas y fórmulas de los documentos.
-- Facilitar la descarga de los materiales y del dataset de práctica.
+- Presentar los materiales para consulta en línea, sin descargas desde el sitio.
 - Omitir entidad, duración y horario de las cabeceras publicadas.
 - Incluir Universidad Santo Tomas y los nombres Andrea Cruz Yomayusa y Diego Alejandro Vela en el pie de página.
 - Mantener el aula y el README orientados al estudiante.
@@ -22,9 +22,9 @@ Crear un aula pública en GitHub Pages para el curso **Analítica de Datos e Int
 - Página de presentación de la sesión 1 y cuatro fases navegables con el contenido de la nueva guía SECOP II.
 - Índice de apartados en cada lectura, navegación entre materiales y versión de impresión.
 - Renderizado de diagramas Mermaid y fórmulas matemáticas de la guía.
-- Descargas individuales por fase, guía completa en Markdown y paquete ZIP.
+- Consulta en línea de las cuatro fases, sin botones ni archivos descargables.
 - Copia de bloques de texto y casillas de verificación que conservan su estado en el navegador.
-- Cabeceras publicadas sin los metadatos excluidos, incluidos los documentos descargables; los archivos fuente permanecen conservados.
+- Cabeceras publicadas sin los metadatos excluidos; los archivos fuente permanecen conservados.
 - Diseño con tipografía Montserrat, colores institucionales, tablas desplazables y navegación adaptable.
 - Pie de página con la universidad y los dos nombres solicitados.
 - README dirigido al estudiante.
@@ -38,11 +38,11 @@ Crear un aula pública en GitHub Pages para el curso **Analítica de Datos e Int
 - Compilación local completada.
 - Seis páginas comprobadas en navegador con anchos de 390 y 1440 píxeles, sin desbordamiento horizontal de página.
 - Los diagramas y las fórmulas se muestran correctamente.
-- Rutas internas y enlaces de descarga comprobados en el sitio local.
-- Navegación por apartados, copia, descarga y persistencia de casillas comprobadas.
+- Rutas internas comprobadas en el sitio local.
+- Navegación por apartados, copia y persistencia de casillas comprobadas.
 - Capturas revisadas en escritorio y móvil; sin errores de JavaScript en las pruebas.
-- Verificación repetida sobre la URL pública: páginas de las cuatro fases, enlaces internos, descargas, diagramas y responsive correctos.
-- ZIP validado con la guía completa y las cuatro fases en Markdown.
+- Verificación repetida sobre la URL pública: páginas de las cuatro fases, enlaces internos, diagramas y responsive correctos.
+- Elementos de descarga retirados del sitio publicado.
 - Publicación completada en [GitHub Actions](https://github.com/DIALVEBE/Contraloria/actions/runs/37157069641). El primer intento recibió un error 503 de GitHub; el reintento finalizó correctamente.
 
 ## Lo que falta
@@ -56,5 +56,4 @@ La creación, publicación y verificación del índice están completas. La sesi
 - Repositorio: https://github.com/DIALVEBE/Contraloria
 - Sitio: https://dialvebe.github.io/Contraloria/
 - Sesión 1: https://dialvebe.github.io/Contraloria/sesion-1/
-- Materiales: https://dialvebe.github.io/Contraloria/descargas/sesion-1.zip
 - Estado: ajuste de cuatro fases publicado y verificado.

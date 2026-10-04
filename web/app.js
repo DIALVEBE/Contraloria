@@ -1,9 +1,8 @@
-import { createIcons, ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, Download, FolderDown, ChevronRight, ChevronDown, Database, Printer, List, Copy, Check, ListChecks } from 'lucide';
+import { createIcons, ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, ChevronRight, ChevronDown, Database, List, Copy, Check, ListChecks } from 'lucide';
 
-const icons = { ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, Download, FolderDown, ChevronRight, ChevronDown, Database, Printer, List, Copy, Check, ListChecks };
+const icons = { ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, ChevronRight, ChevronDown, Database, List, Copy, Check, ListChecks };
 const refreshIcons = () => createIcons({ icons });
 refreshIcons();
-document.querySelector('.print-button')?.addEventListener('click', () => window.print());
 document.querySelectorAll('.prose pre:not(.mermaid)').forEach(pre => {
   const code = pre.querySelector('code');
   if (!code?.textContent.trim()) return;
@@ -41,7 +40,7 @@ if (document.querySelector('.mermaid')) {
       await mermaid.run({ nodes: [node] });
       const svg = node.querySelector('svg');
       if (svg) { svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'Diagrama: ' + [...svg.querySelectorAll('.nodeLabel')].map(n => n.textContent).join(', ')); }
-    } catch { node.closest('figure').querySelector('figcaption').textContent = 'Diagrama disponible en el material descargable.'; }
+    } catch { node.closest('figure').querySelector('figcaption').textContent = 'Diagrama disponible en el material de la sesión.'; }
   }
   document.documentElement.dataset.diagrams = 'ready';
 }

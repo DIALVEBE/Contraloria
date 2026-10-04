@@ -9,7 +9,6 @@
   "dependencies": {
     "@fontsource-variable/montserrat": "5.2.6",
     "esbuild": "0.25.10",
-    "jszip": "3.10.1",
     "katex": "0.16.22",
     "lucide": "0.468.0",
     "marked": "15.0.12",

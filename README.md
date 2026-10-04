@@ -19,7 +19,7 @@
 - Fase 3: Calidad, estructuración y gobernanza de datos.
 - Fase 4: Indicadores y métricas para la gestión pública.
 
-[Consultar los materiales](https://dialvebe.github.io/Contraloria/sesion-1/#materiales) · [Descargar el paquete completo](https://dialvebe.github.io/Contraloria/descargas/sesion-1.zip)
+[Consultar los materiales](https://dialvebe.github.io/Contraloria/sesion-1/#materiales)
 
 Universidad Santo Tomás
 
