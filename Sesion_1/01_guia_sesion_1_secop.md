@@ -303,6 +303,45 @@ flowchart LR
 
 ---
 
+## Descarga parcial de datasets grandes
+
+En Datos Abiertos Colombia algunos conjuntos de datos pueden tener millones de registros y superar varios GB de tamaño. En estos casos no siempre es necesario descargar el archivo completo.
+
+Muchos datasets publicados en datos.gov.co utilizan la API de **Socrata**, lo que permite consultar únicamente una parte de los registros agregando el parámetro `$limit` a la URL.
+
+Por ejemplo:
+
+```text
+https://www.datos.gov.co/resource/p6dx-8zbt.json?$limit=100
+```
+
+En este caso:
+
+- `p6dx-8zbt` identifica el dataset.
+- `.json` indica que queremos obtener los datos en formato JSON.
+- `$limit=100` indica que queremos descargar únicamente 100 registros.
+
+Podemos modificar el límite fácilmente:
+
+```text
+$limit=10
+$limit=100
+$limit=1000
+$limit=5000
+```
+
+Por ejemplo:
+
+```text
+https://www.datos.gov.co/resource/p6dx-8zbt.json?$limit=1000
+```
+
+Esto es especialmente útil cuando el dataset completo es muy pesado, por ejemplo de **5 GB o más**, y solamente necesitamos una muestra para explorar su estructura, identificar variables, revisar la calidad de los datos o comenzar un análisis.
+
+> Para las actividades del curso no siempre será necesario descargar el dataset completo. Podemos comenzar trabajando con una muestra utilizando `$limit`.
+
+---
+
 ## 3. Cómo obtener los datos
 
 ### Desde el portal
