@@ -109,11 +109,9 @@ const session = `<main id="contenido"><section class="session-intro section"><a 
 await writeFile('dist/sesion-1/index.html', shell('Sesión 1 · Datos para decidir', session, '../', 'session'));
 
 const session2Source = await readFile('02_guia_sesion_2_analisis_datos.md', 'utf8');
-const session2EnglishSource = await readFile('Sesion_2/02_guia_sesion_2_analisis_datos_en.md', 'utf8');
 const normalizeLatexControls = source => source.replaceAll('\f', '\\f').replaceAll('\t', '\\t');
 const session2Es = renderMarkdown(normalizeLatexControls(session2Source).replace(/^# .+\n+/, '').trim());
-const session2En = renderMarkdown(session2EnglishSource.replace(/^# .+\n+/, '').trim());
-const session2 = `<main id="contenido"><section class="session-intro section"><a class="breadcrumb" href="../">Programa ${icon('chevron-right')} Sesión 2</a><p class="eyebrow">SESIÓN 02 <span class="status ready">Disponible</span></p><h1>Análisis de datos<br>para la gestión pública</h1><p class="lead">Del dataset a los hallazgos: exploración, limpieza, cruces, visualización e indicadores con OpenRefine, Excel y datos públicos.</p><div class="actions"><button class="button" type="button" data-language="es" aria-pressed="true">Español</button><button class="button" type="button" data-language="en" aria-pressed="false">English</button></div></section><section class="section guide-summary lang-panel" data-language-panel="es"><article class="prose">${session2Es.html}</article></section><section class="section guide-summary lang-panel" data-language-panel="en" hidden><article class="prose">${session2En.html}</article></section></main>`;
+const session2 = `<main id="contenido"><section class="session-intro section"><a class="breadcrumb" href="../">Programa ${icon('chevron-right')} Sesión 2</a><p class="eyebrow">SESIÓN 02 <span class="status ready">Disponible</span></p><h1>Análisis de datos<br>para la gestión pública</h1><p class="lead">Del dataset a los hallazgos: exploración, limpieza, cruces, visualización e indicadores con OpenRefine, Excel y datos públicos.</p></section><section class="section guide-summary"><article class="prose">${session2Es.html}</article></section></main>`;
 await writeFile('dist/sesion-2/index.html', shell('Sesión 2 · Análisis de datos', session2, '../', 'session-2'));
 
 let diagramCount = introRendered.diagramCount;
@@ -127,4 +125,4 @@ for (const [index, markdown] of sections.entries()) {
   await writeFile(`dist/sesion-1/${slug}.html`, shell(`${phase} · ${label}`, article, '../', 'session'));
 }
 
-console.log(`Sitio generado: 7 páginas, ${diagramCount} diagramas y 4 fases de la sesión 1 más la sesión 2 bilingüe.`);
+console.log(`Sitio generado: 7 páginas, ${diagramCount} diagramas y 4 fases de la sesión 1 más la sesión 2.`);

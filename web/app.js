@@ -3,6 +3,10 @@ import { createIcons, ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Ne
 const icons = { ArrowRight, ArrowLeft, ArrowUp, ArrowUpRight, BookOpen, Network, ScanSearch, ListTree, FileSearch, ChartNoAxesCombined, MapPin, ExternalLink, ChevronRight, ChevronDown, Database, List, Copy, Check, ListChecks };
 const refreshIcons = () => createIcons({ icons });
 refreshIcons();
+document.querySelectorAll('a[href]').forEach(link => {
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+});
 document.querySelectorAll('.prose pre:not(.mermaid)').forEach(pre => {
   const code = pre.querySelector('code');
   if (!code?.textContent.trim()) return;
@@ -43,19 +47,4 @@ if (document.querySelector('.mermaid')) {
     } catch { node.closest('figure').querySelector('figcaption').textContent = 'Diagrama disponible en el material de la sesión.'; }
   }
   document.documentElement.dataset.diagrams = 'ready';
-}
-
-const languagePanels = [...document.querySelectorAll('[data-language-panel]')];
-const languageButtons = [...document.querySelectorAll('[data-language]')];
-if (languagePanels.length && languageButtons.length) {
-  const setLanguage = language => {
-    languagePanels.forEach(panel => { panel.hidden = panel.dataset.languagePanel !== language; });
-    languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
-    document.documentElement.lang = language;
-    try { localStorage.setItem('curso:idioma', language); } catch {}
-  };
-  languageButtons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
-  let initialLanguage = 'es';
-  try { initialLanguage = localStorage.getItem('curso:idioma') || 'es'; } catch {}
-  setLanguage(languagePanels.some(panel => panel.dataset.languagePanel === initialLanguage) ? initialLanguage : 'es');
 }

@@ -78,39 +78,37 @@ y una vigencia cerrada, por ejemplo:
 
 [Manual oficial de OpenRefine](https://openrefine.org/docs.html)
 
-## Caso complementario — COVID-19 en Colombia
+## Caso complementario — Ficha técnica de SECOP II
 
-Para practicar tendencias temporales y observar un conjunto de gran volumen puede utilizarse:
+La ficha oficial del conjunto permite consultar sus metadatos, cobertura y estructura:
 
-[Casos positivos de COVID-19 en Colombia](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data)
+[SECOP II — Procesos de Contratación: ficha del conjunto](https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Procesos-de-Contrataci-n/p6dx-8zbt/about_data)
 
-Identificador:
-
-```text
-gt2j-8ykr
-```
-
-El conjunto contiene variables como:
+La información oficial consultada indica que el conjunto:
 
 ```text
-Fecha de reporte
-ID del caso
-Fecha de notificación
-Departamento
-Municipio
-Edad
-Sexo
-Tipo de contagio
-Estado
-Fecha de inicio de síntomas
-Fecha de diagnóstico
-Fecha de recuperación
+registra procesos de compra pública de SECOP II,
+sean o no adjudicados;
+tiene cobertura nacional;
+se actualiza diariamente;
+contiene aproximadamente 8,72 millones de filas;
+dispone de 59 columnas.
 ```
 
-[Descargar dataset completo en CSV](https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD)
+La entidad proveedora es la **Agencia Nacional de Contratación Pública — Colombia Compra Eficiente**. Entre los campos documentados se encuentran la entidad, el NIT, el departamento, la ciudad, el ID del proceso, el nombre y la descripción del procedimiento, la fase, las fechas de publicación y el precio base.
 
-> [!CAUTION]
-> El archivo completo supera el límite de filas de una hoja de Excel. Para trabajar en Excel debe utilizarse una muestra o un subconjunto filtrado.
+> [!IMPORTANT]
+> La cantidad de filas y la fecha de actualización pueden cambiar. Antes de analizar, revise la ficha oficial y registre la fecha de consulta, el filtro aplicado y el número de registros utilizado.
+
+Preguntas de verificación:
+
+```text
+¿La fila representa un proceso de compra?
+¿Qué significa cada campo utilizado?
+¿La cobertura es nacional o filtrada a Boyacá?
+¿Cuál era la fecha de actualización al consultar?
+¿Cuántos registros quedan después de filtrar 2025 y Boyacá?
+```
 
 # Análisis exploratorio de datos
 
@@ -1218,36 +1216,35 @@ pagado
 
 como si fueran equivalentes.
 
-# Caso complementario — Tendencias con COVID-19
+# Caso complementario — Lectura de la ficha oficial de SECOP II
 
-El dataset permite practicar:
+La ficha del conjunto permite practicar la lectura crítica de metadatos antes de comenzar el análisis:
+
+[Consultar la ficha oficial de SECOP II](https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Procesos-de-Contrataci-n/p6dx-8zbt/about_data)
+
+Verifique en la ficha:
 
 ```text
-agrupación por fecha
-conteo de registros
-análisis por departamento
-análisis por municipio
-distribución por edad
-distribución por sexo
-tendencias mensuales
-valores faltantes
+entidad responsable de los datos
+descripción del conjunto
+cobertura geográfica
+frecuencia de actualización
+número de filas y columnas
+nombre y tipo de las variables
+fecha de la última actualización
 ```
-
-Fuente:
-
-[Casos positivos de COVID-19 en Colombia](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data)
 
 Preguntas:
 
 ```text
-¿Cómo evolucionó el número de casos reportados por mes?
-¿Qué departamentos presentan mayor número de registros?
-¿Cómo se distribuyen los casos por sexo?
-¿Qué edades aparecen con mayor frecuencia?
-¿Qué variables contienen valores ausentes?
+¿Qué procesos incluye el conjunto?
+¿Qué diferencia existe entre un proceso y un contrato?
+¿Qué campos permiten filtrar Boyacá y 2025?
+¿Qué campo puede utilizarse como identificador del proceso?
+¿Qué limitaciones deben registrarse antes de presentar un resultado?
 ```
 
-Este caso se utiliza para practicar metodología de análisis y no para una evaluación de gestión fiscal.
+Este caso se utiliza para practicar la documentación y la interpretación responsable de la fuente antes de construir indicadores.
 
 # Tablero final en Excel
 
@@ -1438,7 +1435,7 @@ flowchart TD
 ## Datos
 
 - [SECOP II — Procesos de Contratación](https://www.datos.gov.co/Gastos-Gubernamentales/SECOP-II-Procesos-de-Contrataci-n/p6dx-8zbt)
-- [COVID-19 — Casos positivos en Colombia](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data)
+- [SECOP II — Ficha oficial del conjunto](https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Procesos-de-Contrataci-n/p6dx-8zbt/about_data)
 
 # Idea central
 
