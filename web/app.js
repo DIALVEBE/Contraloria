@@ -44,3 +44,18 @@ if (document.querySelector('.mermaid')) {
   }
   document.documentElement.dataset.diagrams = 'ready';
 }
+
+const languagePanels = [...document.querySelectorAll('[data-language-panel]')];
+const languageButtons = [...document.querySelectorAll('[data-language]')];
+if (languagePanels.length && languageButtons.length) {
+  const setLanguage = language => {
+    languagePanels.forEach(panel => { panel.hidden = panel.dataset.languagePanel !== language; });
+    languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+    document.documentElement.lang = language;
+    try { localStorage.setItem('curso:idioma', language); } catch {}
+  };
+  languageButtons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+  let initialLanguage = 'es';
+  try { initialLanguage = localStorage.getItem('curso:idioma') || 'es'; } catch {}
+  setLanguage(languagePanels.some(panel => panel.dataset.languagePanel === initialLanguage) ? initialLanguage : 'es');
+}
