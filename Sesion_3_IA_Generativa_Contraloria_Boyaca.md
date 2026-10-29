@@ -25,24 +25,6 @@ Al finalizar la sesión, cada participante podrá:
 5. Extraer, resumir, reorganizar y transformar información en tablas, matrices, JSON, CSV, borradores de informes y comunicaciones.
 6. Distinguir entre información comprobada, inferencias, posibles inconsistencias y asuntos pendientes de verificación.
 
-## Ruta de trabajo
-
-| Horario | Contenido y actividades |
-|---|---|
-| 8:00–8:50 | Fundamentos y tipos de IA; límites y criterios de seguridad |
-| 8:50–9:45 | Modelos de lenguaje: ChatGPT, Claude, Gemini/AI Studio y modelos locales; laboratorio de comparación |
-| 9:45–10:50 | Ingeniería de prompts; laboratorio de mejoramiento de instrucciones |
-| 10:50–12:00 | Extracción de datos, respuestas estructuradas y verificación; laboratorios de prompts y JSON |
-| 2:00–2:55 | Análisis documental y RAG con AnythingLLM |
-| 2:55–3:45 | PDF escaneados: OCRmyPDF y control de calidad del texto |
-| 3:45–4:35 | Docling: tablas, estructura documental y conversión a Markdown |
-| 4:35–5:25 | Generación y transformación de información en diversas plataformas |
-| 5:25–6:00 | Caso integrador, socialización y reflexión final |
-
-> **Regla transversal:** antes de pegar, cargar, adjuntar, indexar o compartir un documento en un sistema de IA, comprobar si la entidad autoriza ese tratamiento y ese proveedor. Tener acceso a un archivo no equivale a tener autorización para transferirlo a un servicio externo.
-
----
-
 # 1. Fundamentos y tipos de inteligencia artificial
 
 ## 1.1. ¿Qué es la inteligencia artificial?
