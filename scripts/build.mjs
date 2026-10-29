@@ -30,7 +30,7 @@ const button = (href, text, name = 'arrow-up-right') => `<a class="button" href=
 const footer = `<footer><div><strong>Universidad Santo Tomás</strong><p>Analítica de datos e inteligencia artificial para la gestión pública</p></div><div class="authors">Andrea Cruz Yomayusa<br>Diego Alejandro Vela</div></footer>`;
 
 function shell(title, body, root = './', active = 'index') {
-  return `<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#003DCC"><meta name="description" content="${esc(course)}. Materiales, actividades y fuentes de consulta."><title>${esc(title)} | Universidad Santo Tomás</title><link rel="icon" href="data:,"><link rel="stylesheet" href="${root}assets/style.css"><link rel="stylesheet" href="${root}assets/katex/katex.min.css"><script type="module" src="${root}assets/app.js"></script></head><body><a class="skip" href="#contenido">Saltar al contenido</a><div class="utility">UNIVERSIDAD SANTO TOMÁS <span>Formación para la gestión pública</span></div><header><a class="brand" href="${root}"><span class="brand-mark">Santoto<span></span></span><span>Aula de aprendizaje<small>Datos · Inteligencia artificial</small></span></a><nav aria-label="Principal"><a ${active === 'index' ? 'aria-current="page"' : ''} href="${root}">Programa</a><a ${active === 'session-1' ? 'aria-current="page"' : ''} href="${root}sesion-1/">Sesión 1</a><a ${active === 'session-2' ? 'aria-current="page"' : ''} href="${root}sesion-2/">Sesión 2</a><a href="${root}sesion-1/#materiales">${icon('book-open')}<span>Materiales</span></a></nav></header>${body}${footer}</body></html>`;
+  return `<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#003DCC"><meta name="description" content="${esc(course)}. Materiales, actividades y fuentes de consulta."><title>${esc(title)} | Universidad Santo Tomás</title><link rel="icon" href="data:,"><link rel="stylesheet" href="${root}assets/style.css"><link rel="stylesheet" href="${root}assets/katex/katex.min.css"><script type="module" src="${root}assets/app.js"></script></head><body><a class="skip" href="#contenido">Saltar al contenido</a><div class="utility">UNIVERSIDAD SANTO TOMÁS <span>Formación para la gestión pública</span></div><header><a class="brand" href="${root}"><span class="brand-mark">Santoto<span></span></span><span>Aula de aprendizaje<small>Datos · Inteligencia artificial</small></span></a><nav aria-label="Principal"><a ${active === 'index' ? 'aria-current="page"' : ''} href="${root}">Programa</a><a ${active === 'session-1' ? 'aria-current="page"' : ''} href="${root}sesion-1/">Sesión 1</a><a ${active === 'session-2' ? 'aria-current="page"' : ''} href="${root}sesion-2/">Sesión 2</a><a ${active === 'session-3' ? 'aria-current="page"' : ''} href="${root}sesion-3/">Sesión 3</a><a href="${root}sesion-1/#materiales">${icon('book-open')}<span>Materiales</span></a></nav></header>${body}${footer}</body></html>`;
 }
 
 function phaseCards(root = './') {
@@ -38,7 +38,7 @@ function phaseCards(root = './') {
 }
 
 function cleanMetadata(source) {
-  return source.split('\n').filter(line => !/^\*\*(Entidad|Duración|Horario):\*\*/.test(line)).join('\n');
+  return source.split('\n').filter(line => !/^\*\*(Entidad|Duración|Horario|Curso|Dirigido a|Modalidad|Fecha de actualización):\*\*/.test(line)).join('\n');
 }
 
 function splitGuide(source) {
@@ -90,6 +90,7 @@ function renderMarkdown(markdown, phaseNumber = null) {
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist/sesion-1', { recursive: true });
 await mkdir('dist/sesion-2', { recursive: true });
+await mkdir('dist/sesion-3', { recursive: true });
 await mkdir('dist/assets', { recursive: true });
 await cp('web/style.css', 'dist/assets/style.css');
 await cp('node_modules/@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2', 'dist/assets/montserrat.woff2');
@@ -101,7 +102,7 @@ await writeFile('dist/.nojekyll', '');
 const { intro, sections } = splitGuide(await readFile(sourceFile, 'utf8'));
 
 const driveUrl = 'https://drive.google.com/drive/folders/1cdIYJ0Diy95-kLFdV86e2YJ6MsWzpuHJ?usp=sharing';
-const index = `<main id="contenido"><section class="course-intro"><p class="eyebrow">PROGRAMA DE FORMACIÓN</p><h1>Analítica de Datos e<br>Inteligencia Artificial<br><span>para la Gestión Pública</span></h1><div class="intro-bottom"><p>De la pregunta a la evidencia: datos, herramientas y criterios para comprender la información pública y tomar decisiones informadas.</p><div class="actions">${button('sesion-1/', 'Comenzar la sesión 1', 'arrow-right')}<a class="button button-secondary" href="${driveUrl}" target="_blank" rel="noopener noreferrer">${icon('external-link')}Acceso al Drive</a></div></div></section><section class="program section"><div class="section-heading"><div><p class="eyebrow">RUTA DE APRENDIZAJE</p><h2>El programa, sesión a sesión</h2></div><span class="count">02 disponibles / 05 sesiones</span></div><div class="session-list">${sessions.map(([title, topics], i) => `<article class="session-row ${i < 2 ? 'available' : ''}"><div class="session-number">0${i + 1}</div><div class="session-title"><span class="status ${i < 2 ? 'ready' : ''}">${i < 2 ? 'Disponible' : 'Pendiente'}</span><h3>${title}</h3>${i < 2 ? `<a class="text-link" href="${i === 0 ? 'sesion-1/' : 'sesion-2/'}">Entrar a la sesión ${icon('arrow-right')}</a>` : ''}</div><ul>${topics.map(t => `<li>${t}</li>`).join('')}</ul></article>`).join('')}</div></section></main>`;
+const index = `<main id="contenido"><section class="course-intro"><p class="eyebrow">PROGRAMA DE FORMACIÓN</p><h1>Analítica de Datos e<br>Inteligencia Artificial<br><span>para la Gestión Pública</span></h1><div class="intro-bottom"><p>De la pregunta a la evidencia: datos, herramientas y criterios para comprender la información pública y tomar decisiones informadas.</p><div class="actions">${button('sesion-1/', 'Comenzar la sesión 1', 'arrow-right')}<a class="button button-secondary" href="${driveUrl}" target="_blank" rel="noopener noreferrer">${icon('external-link')}Acceso al Drive</a></div></div></section><section class="program section"><div class="section-heading"><div><p class="eyebrow">RUTA DE APRENDIZAJE</p><h2>El programa, sesión a sesión</h2></div><span class="count">03 disponibles / 05 sesiones</span></div><div class="session-list">${sessions.map(([title, topics], i) => { const available = i < 3; return `<article class="session-row ${available ? 'available' : ''}"><div class="session-number">0${i + 1}</div><div class="session-title"><span class="status ${available ? 'ready' : ''}">${available ? 'Disponible' : 'Pendiente'}</span><h3>${title}</h3>${available ? `<a class="text-link" href="sesion-${i + 1}/">Entrar a la sesión ${icon('arrow-right')}</a>` : ''}</div><ul>${topics.map(t => `<li>${t}</li>`).join('')}</ul></article>`; }).join('')}</div></section></main>`;
 await writeFile('dist/index.html', shell(course, index));
 
 const introRendered = renderMarkdown(intro);
@@ -114,6 +115,11 @@ const session2Es = renderMarkdown(normalizeLatexControls(session2Source).replace
 const session2 = `<main id="contenido"><section class="session-intro section"><a class="breadcrumb" href="../">Programa ${icon('chevron-right')} Sesión 2</a><p class="eyebrow">SESIÓN 02 <span class="status ready">Disponible</span></p><h1>Análisis de datos<br>para la gestión pública</h1><p class="lead">Del dataset a los hallazgos: exploración, limpieza, cruces, visualización e indicadores con OpenRefine, Excel y datos públicos.</p></section><section class="section guide-summary"><article class="prose">${session2Es.html}</article></section></main>`;
 await writeFile('dist/sesion-2/index.html', shell('Sesión 2 · Análisis de datos', session2, '../', 'session-2'));
 
+const session3Source = await readFile('Sesion_3_IA_Generativa_Contraloria_Boyaca.md', 'utf8');
+const session3Es = renderMarkdown(cleanMetadata(normalizeLatexControls(session3Source)).replace(/^# .+\n+/, '').trim());
+const session3 = `<main id="contenido"><section class="session-intro section"><a class="breadcrumb" href="../">Programa ${icon('chevron-right')} Sesión 3</a><p class="eyebrow">SESIÓN 03 <span class="status ready">Disponible</span></p><h1>Inteligencia artificial<br>generativa para la gestión pública</h1><p class="lead">Fundamentos, modelos de lenguaje, prompts verificables y herramientas para analizar documentos y transformar información con criterios de seguridad y trazabilidad.</p></section><section class="section guide-summary"><article class="prose">${session3Es.html}</article></section></main>`;
+await writeFile('dist/sesion-3/index.html', shell('Sesión 3 · IA generativa', session3, '../', 'session-3'));
+
 let diagramCount = introRendered.diagramCount;
 for (const [index, markdown] of sections.entries()) {
   const [slug, phase, label] = phases[index];
@@ -125,4 +131,4 @@ for (const [index, markdown] of sections.entries()) {
   await writeFile(`dist/sesion-1/${slug}.html`, shell(`${phase} · ${label}`, article, '../', 'session'));
 }
 
-console.log(`Sitio generado: 7 páginas, ${diagramCount} diagramas y 4 fases de la sesión 1 más la sesión 2.`);
+console.log(`Sitio generado: 8 páginas, ${diagramCount} diagramas y 4 fases de la sesión 1 más las sesiones 2 y 3.`);
