@@ -7,6 +7,20 @@ document.querySelectorAll('a[href]').forEach(link => {
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 });
+const headerNav = document.querySelector('header nav');
+const fitHeaderNav = () => {
+  if (!headerNav) return;
+  const compact = document.documentElement.clientWidth <= 760;
+  headerNav.style.gap = compact ? '8px' : '';
+  headerNav.style.justifyContent = compact ? 'space-between' : '';
+  headerNav.querySelectorAll('a').forEach(link => {
+    link.style.fontSize = compact ? '11px' : '';
+    link.style.gap = compact ? '4px' : '';
+    if (compact) link.style.marginLeft = '0';
+  });
+};
+fitHeaderNav();
+window.addEventListener('resize', fitHeaderNav);
 document.querySelectorAll('.prose pre:not(.mermaid)').forEach(pre => {
   const code = pre.querySelector('code');
   if (!code?.textContent.trim()) return;

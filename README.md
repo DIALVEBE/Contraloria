@@ -7,8 +7,8 @@
 | Sesión | Temática | Estado |
 | --- | --- | --- |
 | 1 | Datos e información para la toma de decisiones; tipos y fuentes; calidad, estructuración y gobernanza; indicadores y métricas. | [Disponible](https://dialvebe.github.io/Contraloria/sesion-1/) |
-| 2 | Análisis exploratorio; patrones, tendencias y anomalías; cruce y depuración; construcción de indicadores; casos de contratación, presupuesto y ejecución de recursos. | Pendiente |
-| 3 | Fundamentos y tipos de IA; IA generativa y modelos de lenguaje; ingeniería de prompts; análisis documental; generación y transformación de información. | Pendiente |
+| 2 | Análisis exploratorio; patrones, tendencias y anomalías; cruce y depuración; construcción de indicadores; casos de contratación, presupuesto y ejecución de recursos. | [Disponible](https://dialvebe.github.io/Contraloria/sesion-2/) |
+| 3 | Fundamentos y tipos de IA; IA generativa y modelos de lenguaje; ingeniería de prompts; análisis documental; generación y transformación de información. | [Disponible](https://dialvebe.github.io/Contraloria/sesion-3/) |
 | 4 | Automatización; análisis de documentos; riesgos y anomalías; informes y reportes; casos en entidades públicas. | Pendiente |
 | 5 | Protección de datos; seguridad; sesgos y riesgos; transparencia y trazabilidad; uso responsable de IA. | Pendiente |
 
