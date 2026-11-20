@@ -11,13 +11,15 @@ const headerNav = document.querySelector('header nav');
 const fitHeaderNav = () => {
   if (!headerNav) return;
   const compact = document.documentElement.clientWidth <= 760;
-  headerNav.style.gap = compact ? '8px' : '';
+  headerNav.style.gap = compact ? '4px' : '';
   headerNav.style.justifyContent = compact ? 'space-between' : '';
   headerNav.querySelectorAll('a').forEach(link => {
-    link.style.fontSize = compact ? '11px' : '';
-    link.style.gap = compact ? '4px' : '';
+    link.style.fontSize = compact ? '10px' : '';
+    link.style.gap = compact ? '2px' : '';
     if (compact) link.style.marginLeft = '0';
   });
+  const materialsLabel = headerNav.lastElementChild?.querySelector('span');
+  if (materialsLabel) materialsLabel.style.display = compact ? 'none' : '';
 };
 fitHeaderNav();
 window.addEventListener('resize', fitHeaderNav);
